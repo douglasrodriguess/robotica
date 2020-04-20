@@ -9,7 +9,7 @@ from controller import DistanceSensor
 
 # Definindo as variáveis
 
-maxSpeed = 6.28 # Velocidade máxima
+maxSpeed = 12.00 # Velocidade máxima
 spedTime = 64   # Tempo de passo da simulação
 distanceMax = 30 # Distancia máxima do robô para o obstáculo
 
@@ -56,19 +56,19 @@ while robo.step(spedTime) !=-1:
     frontObstacle = sensorsValues[3] > (distanceMax-20) or sensorsValues[4] > (distanceMax-20)
 
     # initialize motor speeds at 50% of MAX_SPEED.
-    leftSpeed = 0.5 * maxSpeed
-    rightSpeed = 0.5 * maxSpeed
+    leftSpeed = 0.3 * maxSpeed
+    rightSpeed = 0.3 * maxSpeed
 
     # modify speeds according to obstacles
     if frontObstacle:
-        leftSpeed -= 0.5 * maxSpeed
-        rightSpeed += 0.5 * maxSpeed
+        leftSpeed -= 0.3 * maxSpeed
+        rightSpeed += 0.3 * maxSpeed
     elif leftObstacle:
-        leftSpeed -= 0.5 * maxSpeed
-        rightSpeed += 0.5 * maxSpeed
+        leftSpeed -= 0.3 * maxSpeed
+        rightSpeed += 0.3 * maxSpeed
     elif rightObstacle:
-        leftSpeed += 0.5 * maxSpeed
-        rightSpeed -= 0.5 * maxSpeed
+        leftSpeed += 0.3 * maxSpeed
+        rightSpeed -= 0.3 * maxSpeed
 
     # set up the motor speeds at x% of the MAX_SPEED.
     frontLeftWheel.setVelocity(leftSpeed)
