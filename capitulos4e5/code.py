@@ -61,7 +61,7 @@ while robo.step(spedTime) !=-1:
 
     # modify speeds according to obstacles
     if frontObstacle:
-        leftSpeed -= 0.3 * maxSpeed
+        leftSpeed += 0.3 * maxSpeed
         rightSpeed += 0.3 * maxSpeed
     elif leftObstacle:
         leftSpeed -= 0.3 * maxSpeed
